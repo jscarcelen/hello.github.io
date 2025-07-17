@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # Stripe configuration
-stripe.api_key = st.secrets("STRIPE_SECRET_KEY")
+stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
 DOMAIN = "http://localhost:8501"  # Update this to your deployed domain
 
 # Load products
