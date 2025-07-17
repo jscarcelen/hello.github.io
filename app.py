@@ -1,13 +1,11 @@
 import streamlit as st
 import stripe
 import json
-import uuid
-import pandas as pd
 import os
 
 # Stripe configuration
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
-DOMAIN = "https://helloappapp.streamlit.app"  # Update this to your deployed domain
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")  # Set this as an environment variable securely
+DOMAIN = "https://helloappapp.streamlit.app"  # Replace with your deployed Streamlit domain
 
 # Load products
 @st.cache_data
@@ -53,8 +51,8 @@ def create_checkout_session():
             payment_method_types=["card"],
             line_items=line_items,
             mode="payment",
-            success_url=DOMAIN + "/?success=true",
-            cancel_url=DOMAIN + "/?canceled=true",
+            success_url=DOMAIN + "?success=true",
+            cancel_url=DOMAIN + "?canceled=true",
         )
         return session.url
     except Exception as e:
@@ -72,7 +70,6 @@ st.title("🛍️ My E-Commerce Shop")
 cols = st.columns(3)
 for idx, product in enumerate(products):
     with cols[idx % 3]:
-        #st.image(product["image"], width=200)
         st.markdown(f"**{product['name']}**")
         st.markdown(f"💵 ${product['price'] / 100:.2f}")
         st.button("Add to Cart", key=f"add_{product['id']}", on_click=add_to_cart, args=(product["id"],))
@@ -102,5 +99,5 @@ else:
             st.markdown(f"[Click here if not redirected]({checkout_url})", unsafe_allow_html=True)
             st.markdown(
                 f"""<meta http-equiv="refresh" content="1;url={checkout_url}">""",
-                unsafe_allow_html=True,
+                unsafe_allow_html=True
             )
