@@ -64,7 +64,8 @@ def create_checkout_session():
 # Streamlit layout
 st.set_page_config(page_title="Simple Shop", layout="wide")
 st.title("🛍️ My E-Commerce Shop")
-st.title(products["image"][0])
+for idx, product in enumerate(products):
+    st.title(product["image"])
 st.image("49.jpg", width=200)
 st.image("images/49.jpg", width=200)
 st.image("image (1).png", width=200)
