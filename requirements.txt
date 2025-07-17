@@ -1,6 +1,6 @@
-streamlit
+streamlit >=1.31
 stripe
 pandas
 dotenv
 os
-streamlit >=1.31
+
