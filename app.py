@@ -99,5 +99,4 @@ else:
         checkout_url = create_checkout_session()
         if checkout_url:
             st.success("Redirecting to Stripe Checkout...")
-            st.markdown(f"[Click here if not redirected]({checkout_url})", unsafe_allow_html=True)
-            st.experimental_redirect(checkout_url)  # 🔁 Replaces meta refresh
+            st.experimental_redirect(checkout_url)
