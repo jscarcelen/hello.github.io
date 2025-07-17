@@ -3,9 +3,14 @@ import stripe
 import json
 import uuid
 import pandas as pd
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
 # Stripe configuration
-stripe.api_key = "sk_test_YOUR_SECRET_KEY"  # Replace with your Stripe secret key
+stripe.api_key =   # Replace with your Stripe secret key
 DOMAIN = "http://localhost:8501"  # Update this to your deployed domain
 
 # Load products
