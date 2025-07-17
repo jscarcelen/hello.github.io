@@ -3,4 +3,3 @@ stripe
 pandas
 dotenv
 os
-st-paywall
