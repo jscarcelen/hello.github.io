@@ -3,3 +3,4 @@ stripe
 pandas
 dotenv
 os
+streamlit >=1.31
