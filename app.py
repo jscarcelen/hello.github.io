@@ -68,7 +68,7 @@ products = pd.read_json("products.json")
 st.set_page_config(page_title="Simple Shop", layout="wide")
 st.title("🛍️ My E-Commerce Shop")
 st.title(products)
-for idx, product in enumerate(products):
+for idx, product in enumerate(products["image"][0]):
     st.title(product["image"])
 st.image("49.jpg", width=200)
 st.image("images/49.jpg", width=200)
