@@ -1,0 +1,14 @@
+[
+  {
+    "id": "prod_1",
+    "name": "Vintage Sneakers",
+    "price": 7500,
+    "image": "images/product1.jpg"
+  },
+  {
+    "id": "prod_2",
+    "name": "Classic Watch",
+    "price": 12000,
+    "image": "images/product2.jpg"
+  }
+]
