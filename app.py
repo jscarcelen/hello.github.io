@@ -2,6 +2,7 @@ import streamlit as st
 import stripe
 import json
 import uuid
+import pandas as pd
 
 # Stripe configuration
 stripe.api_key = "sk_test_YOUR_SECRET_KEY"  # Replace with your Stripe secret key
