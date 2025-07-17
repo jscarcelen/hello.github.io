@@ -64,6 +64,7 @@ def create_checkout_session():
 # Streamlit layout
 st.set_page_config(page_title="Simple Shop", layout="wide")
 st.title("🛍️ My E-Commerce Shop")
+st.image("image/49.jpg", width=200)
 
 # Gallery view
 cols = st.columns(3)
