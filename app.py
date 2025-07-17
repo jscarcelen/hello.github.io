@@ -60,7 +60,8 @@ def create_checkout_session():
         return None
 
 # Load products
-products = load_products()
+#products = load_products()
+products = pd.read_json("products.json")
 
 # Streamlit layout
 st.set_page_config(page_title="Simple Shop", layout="wide")
