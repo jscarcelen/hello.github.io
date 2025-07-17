@@ -4,7 +4,7 @@ import json
 import os
 
 # Stripe configuration
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY")  # Set this as an environment variable securely
+stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]  # Set this as an environment variable securely
 DOMAIN = "https://helloappapp.streamlit.app"  # Replace with your deployed Streamlit domain
 
 # Load products
