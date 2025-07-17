@@ -7,7 +7,7 @@ import os
 
 # Stripe configuration
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
-DOMAIN = "http://localhost:8501"  # Update this to your deployed domain
+DOMAIN = "https://helloappapp.streamlit.app/"  # Update this to your deployed domain
 
 # Load products
 @st.cache_data
