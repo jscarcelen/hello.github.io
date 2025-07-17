@@ -13,8 +13,6 @@ def load_products():
     with open("products.json") as f:
         return json.load(f)
 
-products = load_products()
-
 # Cart setup
 if "cart" not in st.session_state:
     st.session_state.cart = {}
@@ -61,6 +59,9 @@ def create_checkout_session():
         st.error(f"Error creating Stripe session: {e}")
         return None
 
+# Load products
+products = load_products()
+
 # Streamlit layout
 st.set_page_config(page_title="Simple Shop", layout="wide")
 st.title("🛍️ My E-Commerce Shop")
@@ -68,7 +69,7 @@ for idx, product in enumerate(products):
     st.title(product["image"])
 st.image("49.jpg", width=200)
 st.image("images/49.jpg", width=200)
-st.image("image (1).png", width=200)
+st.image(products["image"][0], width=200)
 
 
 # Gallery view
