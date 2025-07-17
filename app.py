@@ -61,25 +61,17 @@ def create_checkout_session():
         return None
 
 # Load products
-#products = load_products()
-products = pd.read_json("products.json")
+products = load_products()
 
 # Streamlit layout
 st.set_page_config(page_title="Simple Shop", layout="wide")
 st.title("🛍️ My E-Commerce Shop")
-st.title(products)
-for idx, product in enumerate(products["image"][0]):
-    st.title(product["image"])
-st.image("49.jpg", width=200)
-st.image("images/49.jpg", width=200)
-st.image(products["image"][0], width=200)
-
 
 # Gallery view
 cols = st.columns(3)
 for idx, product in enumerate(products):
     with cols[idx % 3]:
-        st.image(product["image"], width=200)
+        #st.image(product["image"], width=200)
         st.markdown(f"**{product['name']}**")
         st.markdown(f"💵 ${product['price'] / 100:.2f}")
         st.button("Add to Cart", key=f"add_{product['id']}", on_click=add_to_cart, args=(product["id"],))
