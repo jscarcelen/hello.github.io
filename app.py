@@ -1,7 +1,6 @@
 import streamlit as st
 import stripe
 import json
-import os
 
 # Stripe configuration
 stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]  # Set this as an environment variable securely
